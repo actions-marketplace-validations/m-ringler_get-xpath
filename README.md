@@ -1,4 +1,4 @@
-# get-xml-info
+# get-xpath
  Get Information from XML files to use into your GitHub workflows
 
 ## Inputs
@@ -21,7 +21,7 @@
 
 ## Example usage
 
-    uses: mavrosxristoforos/get-xml-info@1.0
+    uses: m-ringler/get-xpath@v2
       with:
         xml-file: 'yourfile.xml'
         xpath: '//element'
@@ -30,7 +30,7 @@
 ## Console usage
 
     node dist/index.js -f path/to/xmlfile -p //element
-    
+
 You can also add -d for debug output.
 
     node dist/index.js -f path/to/file.xml -p //element -d
@@ -50,7 +50,7 @@ Since version 1.1.0, you can now also read attributes. Example:
 
 ## Namespaces
 
-Namespaces are currently not supported, so you can use the `local-name()` XPath function instead. Example: 
+Namespaces are currently not supported, so you can use the `local-name()` XPath function instead. Example:
 
     //*[local-name()='project']/*[local-name()='version']
 
@@ -72,7 +72,7 @@ If `zero-nodes-action='warn'` and no nodes are found, `info` will contain the me
         uses: actions/checkout@v1
         - name: Get XML
           id: getxml
-          uses: mavrosxristoforos/get-xml-info@1.0
+          uses: m-ringler/get-xpath@v2
           with:
             xml-file: 'a-file-here.xml'
             xpath: '//version'
