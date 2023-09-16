@@ -21,7 +21,7 @@
 
 ## Example usage
 
-    uses: m-ringler/get-xpath@v2
+    uses: m-ringler/get-xpath@v3
       with:
         xml-file: 'yourfile.xml'
         xpath: '//element'
@@ -72,7 +72,7 @@ If `zero-nodes-action='warn'` and no nodes are found, `info` will contain the me
         uses: actions/checkout@v1
         - name: Get XML
           id: getxml
-          uses: m-ringler/get-xpath@v2
+          uses: m-ringler/get-xpath@v3
           with:
             xml-file: 'a-file-here.xml'
             xpath: '//version'
